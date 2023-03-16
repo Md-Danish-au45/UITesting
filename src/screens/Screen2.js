@@ -2,8 +2,9 @@ import { View, Text,StyleSheet,Dimensions, TouchableOpacity } from 'react-native
 import React from 'react'
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
 import Feather from "react-native-vector-icons/Feather"
-
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
+import { LinearGradient } from 'expo-linear-gradient';
+
 // import { useFonts,lato } from 'expo-font'
 
 //  work in progress
@@ -12,12 +13,15 @@ export default function Screen2() {
 //   const [fonstloaded] = useFonts({
 //     "Lato-Bold":require("../Lato/Lato-Bold.ttf")
   // })
-
-
-
-
   return (
-    <View style={styles.container} onLayout={fonstloaded}>
+    <View style={styles.container} >
+       <LinearGradient
+        // Background Linear Gradient
+         colors={['#C2EFF5', '#9EDEE3', '#72C9CE', "#61C1C6"]}
+        style={styles.background}
+      >
+    </LinearGradient>
+
         <View style={styles.header}>
             <Text style={styles.head1}>Set Your Parenting goals...</Text>
             <Text style={styles.head2}>We will personalise the program on it.</Text>
@@ -48,11 +52,22 @@ export default function Screen2() {
 }
 
 const {width} = Dimensions.get("screen")
+const {height} = Dimensions.get("screen")
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor:"#9EDEE3",
-      },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#9EDEE3',
+  },
+  background: {
+    position: 'absolute',
+    left:0,
+    right:0,
+    top: 0,
+    bottom:0,
+    height:height
+  },
 
       text: {
         color: 'grey',
@@ -82,7 +97,7 @@ const styles = StyleSheet.create({
       head1:{
         width:width-30,
         fontSize:30,
-        fontFamily:"Lato",
+        // fontFamily:"Lato",
         fontWeight:"bold",
         marginTop:50
       },
