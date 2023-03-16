@@ -2,13 +2,22 @@ import { View, Text,StyleSheet,Dimensions, TouchableOpacity } from 'react-native
 import React from 'react'
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5"
 import Feather from "react-native-vector-icons/Feather"
+
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
+// import { useFonts,lato } from 'expo-font'
 
-
+//  work in progress
 
 export default function Screen2() {
+//   const [fonstloaded] = useFonts({
+//     "Lato-Bold":require("../Lato/Lato-Bold.ttf")
+  // })
+
+
+
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onLayout={fonstloaded}>
         <View style={styles.header}>
             <Text style={styles.head1}>Set Your Parenting goals...</Text>
             <Text style={styles.head2}>We will personalise the program on it.</Text>
@@ -72,7 +81,10 @@ const styles = StyleSheet.create({
     },
       head1:{
         width:width-30,
-        fontSize:25
+        fontSize:30,
+        fontFamily:"Lato",
+        fontWeight:"bold",
+        marginTop:50
       },
       head2:{
         width:width-30,
